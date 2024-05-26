@@ -1,0 +1,33 @@
+# La distribución binomial mide el número de éxitos en una determinada secuencia
+# de n ensayos independientes,
+# con una probabilidad fija de ocurrencia (p)
+
+# Función binomial
+# x ~ B(n, p)
+# p = success
+# 1-p = failed
+
+# Funciones de distribución binomial en R
+# dbinom(x, size, prob)
+# pbinom(q, size, prob)
+# qbinom(p, size, prob)
+# rbinom(n, size, prob) ##números aleatorios
+
+###
+## De cada 10 veces que el Real Madrid juega con el Barca,
+# el Madrid gana 7 veces
+n <- 10
+p <- 0.7
+
+# ¿Cuál es la probabilidad de que gane 1 vez?
+prob_ganar_1_vez <- dbinom(1, n, p)
+print(prob_ganar_1_vez)
+
+# ¿Y de que gane 5 veces?
+prob_ganar_5_veces <- dbinom(5, n, p)
+print(prob_ganar_5_veces)
+
+# ¿Y que gane entre 1 y 3 veces incluidos los dos?
+prob_ganar_1_3_veces <- pbinom(3, n, p) - pbinom(0, n, p)
+print(prob_ganar_1_3_veces)
+
