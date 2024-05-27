@@ -31,3 +31,19 @@ print(prob_ganar_5_veces)
 prob_ganar_1_3_veces <- pbinom(3, n, p) - pbinom(0, n, p)
 print(prob_ganar_1_3_veces)
 
+#Ejemplo 2
+#se comprobado que la probabilidad de que se funda la lampara de un televisor
+#en un mes es .02
+#si el televisor tiene 5 años
+n <- 60
+p <- 0.02
+
+print(dbinom(0,n,p))
+#exactamente haya 5 roturas
+dbinom(5,n,p)
+#al menos haya 5 roturas
+#P[X>= 5]=1-P[X<= 4]
+1-pbinom(4, 60, .02)
+#haya entre 5 y 25 roturas (ambos inclusive)
+#P[5<= X <= 25]
+pbinom(c(4,25),60, .02)
